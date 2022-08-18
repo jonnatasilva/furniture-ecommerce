@@ -1,13 +1,38 @@
-package org.example;
+package com.example.furnitureecommerce.domain;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+/**
+ * It is a business concept that has data but no identify, we often choose to represent it
+ * using the Value Object pattern.
+ *
+ * A value object is any domain object that is uniquely identified by the data it holds.
+ *
+ * ORM gets model definitions from it
+ */
+@Entity
+@Table(name = "ORDER_LINES")
+@Access(AccessType.FIELD)
 public class OrderLine {
 
-    private final String orderId;
-    private final String sku;
-    private final Integer qty;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(name = "ORDER_ID")
+    private String orderId;
+
+    @Column(name = "SKU")
+    private String sku;
+
+    @Column(name = "QTY")
+    private Integer qty;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Batch batch;
+
+    public OrderLine() {}
     public OrderLine(String orderId, String sku, Integer qty) {
         this.orderId = orderId;
         this.sku = sku;

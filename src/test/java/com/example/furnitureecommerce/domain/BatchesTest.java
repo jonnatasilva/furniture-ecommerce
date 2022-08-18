@@ -1,6 +1,6 @@
-package org.example;
+package com.example.furnitureecommerce.domain;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
@@ -35,7 +35,7 @@ public class BatchesTest {
     @Test
     public void testCanAllocateIfAvailableEqualToRequired() {
         var batch = createBatch("SMALL-TABLE", 2);
-        var line = createOrderLine("SMALL-TABLE", 2);
+        var line = createOrderLine("SMALL-TABLE", 1);
 
         assert batch.canAllocate(line);
     }
