@@ -1,2 +1,7 @@
-org\example\AppTest.class
-org\example\BatchesTest.class
+com\example\furnitureecommerce\domain\BatchesTest.class
+com\example\furnitureecommerce\FakeProductRepository.class
+com\example\furnitureecommerce\adapters\repository\impl\ProductRepositoryTest.class
+com\example\furnitureecommerce\FurnitureEcommerceApplicationTests.class
+com\example\furnitureecommerce\service\ServiceTest.class
+com\example\furnitureecommerce\domain\AllocateTest.class
+com\example\furnitureecommerce\e2e\AllocateApiTest.class
